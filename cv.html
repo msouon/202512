@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html data-bs-theme="auto">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>CV - Brand</title>
+    <script>
+        (function() {
+
+            // JavaScript snippet handling Dark/Light mode switching
+
+            const getStoredTheme = () => localStorage.getItem('theme');
+            const setStoredTheme = theme => localStorage.setItem('theme', theme);
+            const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
+
+            const getPreferredTheme = () => {
+
+                if (forcedTheme) return forcedTheme;
+
+                const storedTheme = getStoredTheme();
+                if (storedTheme) {
+                    return storedTheme;
+                }
+
+                const pageTheme = document.documentElement.getAttribute('data-bs-theme');
+
+                if (pageTheme) {
+                    return pageTheme;
+                }
+
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            const setTheme = theme => {
+                if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', theme);
+                }
+            }
+
+            setTheme(getPreferredTheme());
+
+            const showActiveTheme = (theme, focus = false) => {
+                const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
+
+                if (!themeSwitchers.length) return;
+
+                document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                    element.classList.remove('active');
+                    element.setAttribute('aria-pressed', 'false');
+                });
+
+                for (const themeSwitcher of themeSwitchers) {
+
+                    const btnToActivate = themeSwitcher.querySelector('[data-bs-theme-value="' + theme + '"]');
+
+                    if (btnToActivate) {
+                        btnToActivate.classList.add('active');
+                        btnToActivate.setAttribute('aria-pressed', 'true');
+                    }
+                }
+            }
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                const storedTheme = getStoredTheme();
+                if (storedTheme !== 'light' && storedTheme !== 'dark') {
+                    setTheme(getPreferredTheme());
+                }
+            });
+
+            window.addEventListener('DOMContentLoaded', () => {
+                showActiveTheme(getPreferredTheme());
+
+                document.querySelectorAll('[data-bs-theme-value]')
+                    .forEach(toggle => {
+                        toggle.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const theme = toggle.getAttribute('data-bs-theme-value');
+                            setStoredTheme(theme);
+                            setTheme(theme);
+                            showActiveTheme(theme);
+                        })
+                    })
+            });
+        })();
+    </script>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/pikaday.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top portfolio-navbar gradient navbar-dark">
+        <div class="container"><a class="navbar-brand logo" href="#">unlock.com.tw</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarNav"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
+                    <li class="nav-item"><a class="nav-link" href="frp.html">提供機型</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="cv.html">賣場與粉專</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page cv-page">
+        <section class="portfolio-block block-intro border-bottom">
+            <section class="py-4 py-xl-5">
+                <div class="container" style="margin-bottom: 100px;">
+                    <div class="heading" style="margin-bottom: 32px;">
+                        <h2>蝦皮賣場連結</h2>
+                    </div>
+                    <div><a href="https://shopee.tw/luokey"> <img src="https://cf.shopee.sg/file/5a8f7a6352b09f4ce36dd90f46b8fc15"> </a></div>
+                </div>
+                <div class="container">
+                    <div class="heading" style="margin: 0px;margin-bottom: 32px;">
+                        <h2>Facebook 粉專</h2>
+                    </div>
+                    <div class="text-center p-4 p-lg-5"><div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v18.0&appId=237835037545439" nonce="dU89CmTF"></script>
+
+<div class="fb-page" data-href="https://www.facebook.com/android.flash.factory" data-tabs="timeline,messages" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/android.flash.factory" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/android.flash.factory">老k刷機工廠</a></blockquote></div></div>
+                </div>
+            </section>
+        </section>
+    </main>
+    <footer class="page-footer py-3 border-top">
+        <div class="container my-4">
+            <div class="links"><a href="#">聯絡我</a></div>
+            <div class="social-icons"><a class="me-3" href="https://www.facebook.com/android.flash.factory"><i class="icon ion-social-facebook"></i></a><a class="me-3" href="https://shopee.tw/luokey"><i class="icon ion-bag"></i></a></div>
+        </div>
+    </footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/pikaday.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+</body>
+
+</html>
