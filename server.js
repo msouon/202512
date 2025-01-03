@@ -84,6 +84,6 @@ server.get("/photography", (req,res)=>{
 
 
 // 啟動伺服器
-server.listen(5678,  () => {
+server.listen(7410,  () => {
     console.log("Server is running at port 5678.");
 });
