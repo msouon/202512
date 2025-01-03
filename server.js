@@ -24,7 +24,7 @@ server.use(express.urlencoded({ extended: true }));
 /*const paintingData = [
   
     {imgSrc: 'assets/img/phones/rice note 9 pro.jpg', text: '紅米note 9 pro', title: '' },
-    {imgSrc: 'assets/img/phones/Poco c65.png', text: 'Poco c65', title: '' },
+    {imgSrc: 'assets/img/phones/poco c65.png', text: 'Poco c65', title: '' },
     {imgSrc: 'assets/img/phones/rice 14 pro.png', text: '小米14 pro', title: '' },
     {imgSrc: 'assets/img/phones/zenfone 5z.jpg', text: '華碩zenfone 5z', title: '' },
     {imgSrc: 'assets/img/phones/redrice note 7.jpg', text: '紅米note 7', title: '' },
@@ -85,5 +85,5 @@ server.get("/photography", (req,res)=>{
 
 // 啟動伺服器
 server.listen(7410,  () => {
-    console.log("Server is running at port 5678.");
+    console.log("Server is running at port 7410.");
 });
