@@ -21,15 +21,15 @@ server.use(express.urlencoded({ extended: true }));
 {modal:"card4",title:"Animation",text:"This is a description for my fourth card.",imgSrc:"picture/littlechick01.jpg",link:"Animation.html","_id":"f3yMEMCXFqa2v2yG"}
 ])*/
 
-const paintingData = [
+/*const paintingData = [
   
     {imgSrc: 'assets/img/phones/rice note 9 pro.jpg', text: '紅米note 9 pro', title: '' },
-    {imgSrc: 'assets/img/phones/Poco c65.jpg', text: 'Poco c65', title: '' },
-    {imgSrc: 'assets/img/phones/rice 14 pro.jpg', text: '小米14 pro', title: '' },
+    {imgSrc: 'assets/img/phones/Poco c65.png', text: 'Poco c65', title: '' },
+    {imgSrc: 'assets/img/phones/rice 14 pro.png', text: '小米14 pro', title: '' },
     {imgSrc: 'assets/img/phones/zenfone 5z.jpg', text: '華碩zenfone 5z', title: '' },
     {imgSrc: 'assets/img/phones/redrice note 7.jpg', text: '紅米note 7', title: '' },
-    {imgSrc: 'assets/img/phones/redrice note 10s.jpg', text: '紅米note 10s', title: '' },
-    {imgSrc: 'assets/img/phones/rice 10t lite.jpg', text: '小米10t lite', title: '' },
+    {imgSrc: 'assets/img/phones/redrice note 10s.png', text: '紅米note 10s', title: '' },
+    {imgSrc: 'assets/img/phones/rice 10t lite.png', text: '小米10t lite', title: '' },
     {imgSrc: 'assets/img/phones/Oppo reno 2z.jpg', text: 'Oppo reno 2z', title: '' },
     {imgSrc: 'assets/img/phones/Google pixel 9 pro xl.jpg', text: 'Google pixel 9 pro xl', title: '' },
     
@@ -41,7 +41,7 @@ const paintingData = [
 // 直接插入資料
 ProfolioDB.insert(paintingData)
   .then(() => console.log("Initial painting data inserted"))
-  .catch(err => console.error("Error inserting initial data:", err));
+  .catch(err => console.error("Error inserting initial data:", err));*/
    
       
         server.get("/profolio", (req,res)=>{
